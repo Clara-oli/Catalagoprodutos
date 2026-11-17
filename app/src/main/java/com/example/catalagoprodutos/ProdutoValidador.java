@@ -8,6 +8,7 @@ public class ProdutoValidador {
         if (produto.getNome() == null || produto.getNome().trim().isEmpty()) {
             return false;
         }
-        return produto.getPreco() > 0;
+        double preco = produto.getPreco();
+        return Double.isFinite(preco) && preco > 0;
     }
 }
